@@ -78,13 +78,76 @@
 // printID(1)
 // printID("10")
 
-function welcomePeople(a: string[] | string) {
-    if(Array.isArray(a)) {
-        console.log(a.join(" and "))
-    } else {
-        console.log("Hello " + a)
-    }
+// function welcomePeople(a: string[] | string) {
+//     if(Array.isArray(a)) {
+//         console.log(a.join(" and "))
+//     } else {
+//         console.log("Hello " + a)
+//     }
+// }
+
+// welcomePeople("Alice")
+// welcomePeople([ "Bob", "Charlie", "Marius" ])
+
+// function getFirstThree(x: number[] | string) {
+//   return x.slice(0, 3);
+// }
+
+// console.log(getFirstThree("hello"));
+// console.log(getFirstThree([2,3,4,5,6,7,8,9]));
+
+// type Point = {
+//     x: number;
+//     y: number;
+// };
+
+// function printCoord(p: Point) {
+//     console.log("The coordinate's x value is: " + p.x);
+//     console.log("The coordinate's y value is: " + p.y);
+// }
+
+// printCoord({ x: 10, y: 20 });
+
+// type UserInputSanitizedString = string;
+
+// function sanitizeInput(str: string): UserInputSanitizedString {
+//     return sanitize(str)
+// }
+
+// let userInput = sanitizeInput(getInput())
+
+// userInput = "new input";
+
+// let changingString = "Hello World";
+// changingString = "Olá Mundo";
+
+// console.log(changingString);
+
+// const constantString = "Hello World";
+// constantString = "Olá Mundo";
+
+// console.log(constantString);
+
+// function compare(a: string, b: string): -1 | 0 | 1 {
+//     return a === b ? 0 : a > b ? 1 : -1;
+// }
+
+// console.log(compare("5","5"))
+
+// declare function handleRequest(url: string, method: "GET" | "POST"): void;
+
+// const req = { url: "https://example.com", method: "GET" };
+// handleRequest(req.url, req.method);
+
+// const req = { url: "https://example.com", method: "GET" as "GET" };
+
+function doSomething(x: string | null) {
+  if (x === null) {
+    // do nothing
+  } else {
+    console.log("Hello, " + x.toUpperCase());
+  }
 }
 
-welcomePeople("Alice")
-welcomePeople([ "Bob", "Charlie", "Marius" ])
+doSomething("Ali");
+
