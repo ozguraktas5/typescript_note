@@ -34,9 +34,35 @@
 //     console.log("The coordinate's y: " + pt.y)
 // }
 // printCoord({ x:  5, y: 7 });
-function printName(obj) {
-    return "Hello ".concat(obj.firstName, " ").concat(obj.lastName);
+// function printName(obj: { firstName: string, lastName?: string }) {
+//     return `Hello ${obj.firstName} ${obj.lastName}`;
+// };
+// console.log(printName( { firstName : "John" } ));
+// console.log(printName( { firstName: "Michael", lastName: "Jordan" } ));
+// function printID(id: number | string) {
+//     console.log("Your ID is: " + id);
+// }
+// printID(101)
+// printID("505")
+// function printID(id: string | number) {
+//     console.log(id.toUpperCase());
+// };
+// function printID(id: string | number) {
+//     if (typeof id === "string") {
+//         console.log(id.toUpperCase());
+//     } else {
+//         console.log(id)
+//     }
+// }
+// printID(1)
+// printID("10")
+function welcomePeople(a) {
+    if (Array.isArray(a)) {
+        console.log(a.join(" and "));
+    }
+    else {
+        console.log("Hello " + a);
+    }
 }
-;
-console.log(printName({ firstName: "John" }));
-console.log(printName({ firstName: "Michael", lastName: "Jordan" }));
+welcomePeople("Alice");
+welcomePeople(["Bob", "Charlie", "Marius"]);
