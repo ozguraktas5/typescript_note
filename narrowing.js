@@ -87,8 +87,82 @@
 //   }
 //   return animal.fly();
 // }
-var x = Math.random() < 0.5 ? 10 : "hello world";
-x = 1;
-console.log(x);
-x = "goodbye";
-console.log(x);
+// let x = Math.random() < 0.5 ? 10 : "hello world";
+// x = 1;
+// console.log(x);
+// x = "goodbye";
+// console.log(x);
+// function example() {
+//     let x: string | number | boolean;
+//     x = Math.random() < 0.5
+//     console.log(x) // boolean
+//     if (Math.random() < 0.5) {
+//         x = "hello";
+//         console.log(x); // string
+//     } else {
+//         x = 100;
+//         console.log(x)  // number
+//     }
+//     return x;
+// }
+// function isFish(pet: Fish | Bird): pet is Fish {
+//     return (pet as Fish).swim !== undefined;
+// }
+// let pet = getSmallPet();
+// if (isFish(pet)) {
+//     pet.swim();
+// } else {
+//     pet.fly();
+// }
+// interface Circle {
+//     kind: "Circle";
+//     radius: number;
+// }
+// interface Square {
+//     kind: "Square";
+//     sideLength: number;
+// }
+// type Shape = Circle | Square;
+// // function getArea(shape: Shape) {
+// //     if(shape.kind === "Circle"){
+// //         return Math.PI * shape.radius ** 2
+// //     }
+// // }
+// function getArea(shape: Shape) {
+//     switch (shape.kind) {
+//         case "Circle":
+//             return Math.PI * shape.radius ** 2
+//         case "Square":
+//             return shape.sideLength ** 2
+//     }
+// }
+// console.log(getArea({kind:"Circle", radius:5}));
+// console.log(getArea({kind:"Square", sideLength:4}));
+// type Shape = Circle | Square;
+// function getArea(shape: Shape) {
+//   switch (shape.kind) {
+//     case "circle":
+//       return Math.PI * shape.radius ** 2;
+//     case "square":
+//       return shape.sideLength ** 2;
+//     default:
+//       const _exhaustiveCheck: never = shape;
+//       return _exhaustiveCheck;
+//   }
+// }
+// interface Triangle {
+//   kind: "triangle";
+//   sideLength: number;
+// }
+// type Shape = Circle | Square | Triangle;
+// function getArea(shape: Shape) {
+//   switch (shape.kind) {
+//     case "circle":
+//       return Math.PI * shape.radius ** 2;
+//     case "square":
+//       return shape.sideLength ** 2;
+//     default:
+//       const _exhaustiveCheck: never = shape;
+//       return _exhaustiveCheck;
+//   }
+// }
