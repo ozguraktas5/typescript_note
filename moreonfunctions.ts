@@ -139,21 +139,64 @@
 // console.log(len([1, 2]));
 // console.log(len(Math.random() > 0.5 ? "hello" : [0]));
 
-const user = {
-  id: 123,
-  admin: false,
-  becomeAdmin: function () {
-    this.admin = true;
-  },
+// const user = {
+//   id: 123,
+//   admin: false,
+//   becomeAdmin: function () {
+//     this.admin = true;
+//   },
+// }
+
+// interface DB {
+//   filterUsers(filter: (this: User) => boolean): User[];
+// }
+
+// const db = getDB();
+// const admins = db.filterUsers(function (this: User) {
+//   return this.admin;
+// })
+
+// void
+
+function noop() {
+  return;
 }
 
-interface DB {
-  filterUsers(filter: (this: User) => boolean): User[];
+// unknown
+
+function f1(a: any) {
+  a.b();
 }
 
-const db = getDB();
-const admins = db.filterUsers(function (this: User) {
-  return this.admin;
-})
+function f2(a: unknown) {
+  a.b();
+}
 
+function safeParse(s: string): unknown {
+  return JSON.parse(s);
+}
+
+const obj = safeParse(someRandomString);
+
+// never
+
+function fail(msg: string): never {
+  throw new Error(msg);
+}
+
+function fn(x: string | number) {
+  if (typeof x === "string") {
+
+  } else if (typeof x === "number") {
+
+  } else {
+    x;
+  }
+}
+
+// function
+
+function doSomeThing(f: Function) {
+  return f(1,2,3);
+}
 
