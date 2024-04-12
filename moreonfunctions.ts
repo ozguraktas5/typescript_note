@@ -116,16 +116,44 @@
 // myForEach([1, 2, 3], (a) => console.log(a));
 // myForEach([1, 2, 3], (a, i) => console.log(a, i));
 
-function makeDate(timestamp: number): Date;
-function makeDate(m: number, d: number, y: number): Date;
-function makeDate(mOrTimestamp: number, d?: number, y?: number): Date {
-  if (d !== undefined && y !== undefined) {
-    return new Date(y, mOrTimestamp, d);
-  } else {
-    return new Date(mOrTimestamp);
-  }
+// function makeDate(timestamp: number): Date;
+// function makeDate(m: number, d: number, y: number): Date;
+// function makeDate(mOrTimestamp: number, d?: number, y?: number): Date {
+//   if (d !== undefined && y !== undefined) {
+//     return new Date(y, mOrTimestamp, d);
+//   } else {
+//     return new Date(mOrTimestamp);
+//   }
+// }
+// const d1 = makeDate(12345678);
+// const d2 = makeDate(5, 5, 5);
+// const d3 = makeDate(1, 3);
+
+// function len(x: string): number;
+// function len(arr: any[]): number;
+// function len(x: any[] | string) {
+//   return x.length;
+// }
+
+// console.log(len(""));
+// console.log(len([1, 2]));
+// console.log(len(Math.random() > 0.5 ? "hello" : [0]));
+
+const user = {
+  id: 123,
+  admin: false,
+  becomeAdmin: function () {
+    this.admin = true;
+  },
 }
-const d1 = makeDate(12345678);
-const d2 = makeDate(5, 5, 5);
-const d3 = makeDate(1, 3);
+
+interface DB {
+  filterUsers(filter: (this: User) => boolean): User[];
+}
+
+const db = getDB();
+const admins = db.filterUsers(function (this: User) {
+  return this.admin;
+})
+
 
