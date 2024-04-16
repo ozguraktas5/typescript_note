@@ -122,34 +122,61 @@
 //   return this.admin;
 // })
 // void
-function noop() {
-    return;
-}
+// function noop() {
+//   return;
+// }
 // unknown
-function f1(a) {
-    a.b();
-}
-function f2(a) {
-    a.b();
-}
-function safeParse(s) {
-    return JSON.parse(s);
-}
-var obj = safeParse(someRandomString);
+// function f1(a: any) {
+//   a.b();
+// }
+// function f2(a: unknown) {
+//   a.b();
+// }
+// function safeParse(s: string): unknown {
+//   return JSON.parse(s);
+// }
+// const obj = safeParse(someRandomString); 
 // never
-function fail(msg) {
-    throw new Error(msg);
-}
-function fn(x) {
-    if (typeof x === "string") {
-    }
-    else if (typeof x === "number") {
-    }
-    else {
-        x;
-    }
-}
+// function fail(msg: string): never {
+//   throw new Error(msg);
+// }
+// function fn(x: string | number) {
+//   if (typeof x === "string") {
+//   } else if (typeof x === "number") {
+//   } else {
+//     x;
+//   }
+// }
 // function
-function doSomeThing(f) {
-    return f(1, 2, 3);
-}
+// function doSomeThing(f: Function) {
+//   return f(1,2,3);
+// }
+// function multiply(n: number, ...m: number[]) {
+//   return m.map((x) => n * x);
+// }
+// const a = multiply(10, 1, 2, 3, 4);
+// console.log(a)
+// const arr1 = [1, 2, 3];
+// const arr2 = [4, 5, 6];
+// arr1.push(...arr2);
+// console.log(arr1)
+// const args = [8, 5] as const;
+// const angle = Math.atan2(...args);
+// console.log(angle)
+// function sum({ a,b,c }) {
+//   console.log(a + b + c);
+// }
+// sum({ a: 10, b: 3, c: 5 })
+// function sum({ a,b,c }: { a: number, b: number, c: number }) {
+//   console.log(a + b + c);
+// }
+// sum({a: 1, b: 2, c: 3})
+// type ABC = { a: number, b: number, c: number };
+// function sum({ a,b,c }: ABC) {
+//   console.log(a + b + c);
+// }
+// sum({ a: 1, b: 2, c: 3 })
+var src = [1, 2, 3];
+var dst = [0];
+src.forEach(function (el) { return dst.push(el); });
+console.log(dst);
