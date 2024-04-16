@@ -1,15 +1,13 @@
-function greet(person) {
-    return "Hello " + person.name;
+// function greet(person: { name: string; age: number }) {
+//   return "Hello " + person.name;
+// };
+function visitForBirtday(home) {
+    console.log("Happy birthday ".concat(home.resident.name));
+    home.resident.age++;
 }
-;
-console.log(greet({ name: "Ozgur", age: 31 }));
-;
-function greet2(person) {
-    return "Hello" + person.name;
+function evict(home) {
+    home.resident = {
+        name: "Sadik",
+        age: 43,
+    };
 }
-;
-console.log(greet({ name: "Ozgur", age: 31 }));
-function greet3(person2) {
-    return "Hello" + person2.name;
-}
-console.log(greet({ name: "Ozgur", age: 31 }));
