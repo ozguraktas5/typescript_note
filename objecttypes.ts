@@ -63,18 +63,66 @@
 //     obj.prop = "hello"
 // }
 
-interface Home {
-  readonly resident: { name: string; age: number };
+// interface Home {
+//   readonly resident: { name: string; age: number };
+// }
+
+// function visitForBirtday(home: Home) {
+//   console.log(`Happy birthday ${home.resident.name}`);
+//   home.resident.age++;
+// }
+
+// function evict(home: Home) {
+//   home.resident = {
+//     name: "Sadik",
+//     age: 43,
+//   };
+// }
+
+// interface Person {
+//     name: string;
+//     age: number;
+// }
+
+// interface ReadOnlyPerson {
+//     readonly name: string;
+//     readonly age: number;
+// }
+
+// let writablePerson: Person = {
+//     name: "Sercan",
+//     age: 25
+// }
+
+// let readOnlyPerson: ReadOnlyPerson = writablePerson;
+
+// console.log(readOnlyPerson.age)
+// writablePerson.age++
+// console.log(readOnlyPerson.age)
+
+// interface StringArray {
+//     [index: number]: string;
+// }
+
+// const myArray: StringArray = getStringArray();
+// const secondItem = myArray[1];
+
+interface NumberDictionary {
+    [index: string]: number;
+
+    length: number;
+    name: string;
 }
 
-function visitForBirtday(home: Home) {
-  console.log(`Happy birthday ${home.resident.name}`);
-  home.resident.age++;
+interface NumberOfStringDictionary {
+    [index: string]: number | string;
+    length: number;
+    name: string;
 }
 
-function evict(home: Home) {
-  home.resident = {
-    name: "Sadik",
-    age: 43,
-  };
+interface ReadOnlyStringArray {
+    readonly [index: number]: string
 }
+
+let myArray: ReadOnlyStringArray = getReadOnlyStringArray();
+myArray[2] = "Nuran"
