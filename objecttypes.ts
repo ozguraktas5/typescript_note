@@ -107,22 +107,161 @@
 // const myArray: StringArray = getStringArray();
 // const secondItem = myArray[1];
 
-interface NumberDictionary {
-    [index: string]: number;
+// interface NumberDictionary {
+//     [index: string]: number;
 
-    length: number;
-    name: string;
+//     length: number;
+//     name: string;
+// }
+
+// interface NumberOfStringDictionary {
+//     [index: string]: number | string;
+//     length: number;
+//     name: string;
+// }
+
+// interface ReadOnlyStringArray {
+//     readonly [index: number]: string
+// }
+
+// let myArray: ReadOnlyStringArray = getReadOnlyStringArray();
+// myArray[2] = "Nuran"
+
+// interface SquareConfig {
+//     color?: string
+//     width?: number
+// }
+
+// function createSquare(config: SquareConfig): { color: string; area: number } {
+//     return {
+//         color: config.color || "red",
+//         area: config.width ? config.width * config.width : 20,
+//     }
+// }
+
+// let mySquare = createSquare({ color: "red", width: 100 });
+// console.log(mySquare)
+
+// let squareOptions2 = { colour: "red", width: 100 };
+// let mySquare2 = createSquare(squareOptions2);
+// console.log(mySquare2)
+
+// let squareOptions3 = { colour: "red" };
+// let mySquare3 = createSquare(squareOptions3);
+// console.log(mySquare3)
+
+// interface BasicAddress {
+//     name?: string;
+//     street: string;
+//     city: string;
+//     country: string;
+//     postalCode: string;
+// }
+
+// interface AddressWithUnit {
+//     name?: string;
+//     unit: string;
+//     street: string;
+//     city: string;
+//     country: string;
+//     postalCode: string;
+// }
+
+// interface BasicAddress {
+//     name?: string;
+//     street: string;
+//     city: string;
+//     country: string;
+//     postalCode: string;
+// }
+
+// interface AddressWithUnit extends BasicAddress {
+//     unit: string;
+// }
+
+// interface Colorful {
+//     color: string;
+// }
+
+// interface Circle {
+//     radius: number;
+// }
+
+// interface ColorfulCircle extends Colorful, Circle {}
+
+// const cc: ColorfulCircle = {
+//     color: "red",
+//     radius: 40,
+// }
+
+// interface Colorful {
+//     color: string;
+// }
+
+// interface Circle {
+//     radius: number;
+// }
+
+// type ColorfulCircle = Colorful & Circle;
+
+// function draw(circle: Colorful & Circle) {
+//     console.log(`Color was ${circle.color}`)
+//     console.log(`Radius was ${circle.radius}`)
+// }
+
+// draw({ color: "red", radius: 11 })
+// draw({ color: "red", raidus: 42 })
+
+// interface Box {
+//     contents: unknown;
+// }
+
+// let x: Box = {
+//     contents: "hello world",
+// }
+
+// if (typeof x.contents === "string") {
+//     console.log(x.contents.toUpperCase())
+// }
+
+// console.log((x.contents as string).toLowerCase())
+
+// interface NumberBox {
+//     contents: number;
+// }
+
+// interface StringBox {
+//     contents: string;
+// }
+
+// interface BooleanBox {
+//     contents: boolean
+// }
+
+// function setContents(box: StringBox, newContents: string): void;
+// function setContents(box: NumberBox, newContents: number): void;
+// function setContents(box: BooleanBox, newContents: boolean): void;
+// function setContents(box: { contents: any }, newContents: any) {
+//     box.contents = newContents
+// }
+
+// interface Box<Type> {
+//   contents: Type;
+// }
+
+interface Box<Type> {
+  contents: Type;
 }
-
-interface NumberOfStringDictionary {
-    [index: string]: number | string;
-    length: number;
-    name: string;
+interface StringBox {
+  contents: string;
 }
+ 
+let boxA: Box<string> = { contents: "hello" };
+boxA.contents;
+        
+let boxB: StringBox = { contents: "world" };
+boxB.contents;
 
-interface ReadOnlyStringArray {
-    readonly [index: number]: string
-}
 
-let myArray: ReadOnlyStringArray = getReadOnlyStringArray();
-myArray[2] = "Nuran"
+
+
