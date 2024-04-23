@@ -249,19 +249,42 @@
 //   contents: Type;
 // }
 
-interface Box<Type> {
-  contents: Type;
-}
-interface StringBox {
-  contents: string;
+// interface Box<Type> {
+//   contents: Type;
+// }
+// interface StringBox {
+//   contents: string;
+// }
+
+// let boxA: Box<string> = { contents: "hello" };
+// boxA.contents;
+
+// let boxB: StringBox = { contents: "world" };
+// boxB.contents;
+
+// function doSomething(value: Array<string>) {
+//     console.log(value)
+// }
+
+// let myArray: string[] = ["hello", "world"];
+
+// doSomething(myArray);
+// doSomething(new Array("hello", "world"));
+
+// function doSomething(pair: [string, number]) {
+//   const a = pair[0];
+//   const b = pair[1];
+
+//   console.log(a,b)
+
+// }
+
+// doSomething(["hello", 42]);
+
+let point = [3, 4] as const;
+ 
+function distanceFromOrigin([x, y]: [number, number]) {
+  return Math.sqrt(x ** 2 + y ** 2);
 }
  
-let boxA: Box<string> = { contents: "hello" };
-boxA.contents;
-        
-let boxB: StringBox = { contents: "world" };
-boxB.contents;
-
-
-
-
+distanceFromOrigin(point);
