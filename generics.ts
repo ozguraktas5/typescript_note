@@ -19,12 +19,62 @@
 //     return arg;
 // }
 
-function loggingIdentity<Type>(arg: Type[]): Type[] {
-    console.log(arg.length)
-    return arg
+// function loggingIdentity<Type>(arg: Type[]): Type[] {
+//     console.log(arg.length)
+//     return arg
+// }
+
+// loggingIdentity([1,2,3,4,5,6])
+
+// function loggingIdentity<Type>(arg: Array<Type>): Array<Type> {
+//     console.log(arg.length)
+//     return arg
+// }
+
+// function identity<Type>(arg: Type): Type {
+//     return arg
+// }
+
+// let myIdentity: <Type>(arg: Type) => Type = identity;
+
+// console.log(myIdentity(true))
+
+// function identity<Input>(arg: Input): Input {
+//     return arg
+// }
+
+// let myIdentity: <Input>(arg: Input) => Input = identity;
+
+// function identity<Type>(arg: Type): Type {
+//   return arg;
+// }
+ 
+// let myIdentity: { <Type>(arg: Type): Type } = identity;
+
+// interface GenericIdentityFn {
+//     <Type>(arg: Type): Type;
+// }
+
+// function identity<Type>(arg: Type): Type {
+//     return arg;
+// }
+
+// let myIdentity: GenericIdentityFn = identity;
+
+class GenericNumber<NumType> {
+    zeroValue: NumType;
+    add: (x: NumType, y: NumType) => NumType;
 }
 
-loggingIdentity([1,2,3,4,5,6])
+let myGenericNumber = new GenericNumber<number>();
+myGenericNumber.zeroValue = 0
+myGenericNumber.add = function (x,y) {
+    return x+y
+}
+
+
+
+
 
 
 
