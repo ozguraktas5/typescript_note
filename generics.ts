@@ -48,7 +48,7 @@
 // function identity<Type>(arg: Type): Type {
 //   return arg;
 // }
- 
+
 // let myIdentity: { <Type>(arg: Type): Type } = identity;
 
 // interface GenericIdentityFn {
@@ -82,22 +82,63 @@
 
 // console.log(stringNumeric.add(stringNumeric.zeroValue, "ozgur"))
 
-interface Lengthwise {
-    length: number
-}
+// interface Lengthwise {
+//     length: number
+// }
 
-function loggingIdentity<Type extends Lengthwise>(arg: Type): Type{
-    console.log(arg.length) 
-    return arg
-}
+// function loggingIdentity<Type extends Lengthwise>(arg: Type): Type{
+//     console.log(arg.length)
+//     return arg
+// }
 
-loggingIdentity(5)
-loggingIdentity("asdfgdasdgsd")
-loggingIdentity([1,23,5,6,34,68,"sdg"])
+// loggingIdentity(5)
+// loggingIdentity("asdfgdasdgsd")
+// loggingIdentity([1,23,5,6,34,68,"sdg"])
+// loggingIdentity({ length: 10, value: 3 })
 
+// function getProperty<Type, Key extends keyof Type>(obj: Type, key: Key) {
+//     return obj[key]
+// }
 
+// let x = { a: 1, b: 2, c: 3, d: 4};
 
+// getProperty(x, "a");
+// getProperty(x, "b");
+// getProperty(x, "m");
 
+// class BeeKeeper {
+//   hasMask: boolean = true;
+// }
 
+// class ZooKeeper {
+//   nametag: string = "Mikle";
+// }
 
+// class Animal {
+//   numLegs: number = 4;
+// }
 
+// class Bee extends Animal {
+//   numLegs = 6;
+//   keeper: BeeKeeper = new BeeKeeper();
+// }
+
+// class Lion extends Animal {
+//   keeper: ZooKeeper = new ZooKeeper();
+// }
+
+// function createInstance<A extends Animal>(c: new () => A): A {
+//   return new c();
+// }
+
+// createInstance(Lion).keeper.nametag;
+// createInstance(Bee).keeper.hasMask;
+
+declare function create<T extends HTMLElement = HTMLDivElement, U = T[]>(
+  element?: T,
+  children?: U
+): Container<T, U>;
+
+const div = create();
+
+const p = create(new HTMLParagraphElement());
