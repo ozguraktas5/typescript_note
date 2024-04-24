@@ -61,16 +61,39 @@
 
 // let myIdentity: GenericIdentityFn = identity;
 
-class GenericNumber<NumType> {
-    zeroValue: NumType;
-    add: (x: NumType, y: NumType) => NumType;
+// class GenericNumber<NumType> {
+//     zeroValue: NumType;
+//     add: (x: NumType, y: NumType) => NumType;
+// }
+
+// let myGenericNumber = new GenericNumber<number>();
+// myGenericNumber.zeroValue = 0
+// myGenericNumber.add = function (x,y) {
+//     return x+y
+// }
+
+// console.log(myGenericNumber.add(1,2))
+
+// let stringNumeric = new GenericNumber<string>();
+// stringNumeric.zeroValue = "1";
+// stringNumeric.add = function (x, y) {
+//     return x + y
+// }
+
+// console.log(stringNumeric.add(stringNumeric.zeroValue, "ozgur"))
+
+interface Lengthwise {
+    length: number
 }
 
-let myGenericNumber = new GenericNumber<number>();
-myGenericNumber.zeroValue = 0
-myGenericNumber.add = function (x,y) {
-    return x+y
+function loggingIdentity<Type extends Lengthwise>(arg: Type): Type{
+    console.log(arg.length) 
+    return arg
 }
+
+loggingIdentity(5)
+loggingIdentity("asdfgdasdgsd")
+loggingIdentity([1,23,5,6,34,68,"sdg"])
 
 
 
